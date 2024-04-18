@@ -20,3 +20,6 @@ This Python script utilizes TensorFlow and OpenCV for real-time digit recognitio
 1. Install the required dependencies (`tensorflow`, `numpy`, `opencv-python`).
 2. Run the `real_time_digit_recognition.py` script.
 3. Point the webcam towards handwritten digits to see real-time recognition.
+
+
+(made by Aditya)
