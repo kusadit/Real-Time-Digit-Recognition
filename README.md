@@ -1,21 +1,110 @@
-# Real-Time Digit Recognition with TensorFlow and OpenCV
+# Real-Time Digit Recognition
 
-This Python script utilizes TensorFlow and OpenCV for real-time digit recognition from a webcam feed. It trains a Convolutional Neural Network (CNN) model using the MNIST dataset and then predicts digits in real-time from the video stream.
+This project implements a real-time digit recognition system using a pre-trained neural network on the MNIST dataset and OpenCV for live video processing. The program allows users to draw digits in a specified region of the webcam feed and recognizes them using the trained model.
 
 ## Features
+- **Real-time digit recognition**: Detects and recognizes digits drawn in the live webcam feed.
+- **Dynamic threshold adjustment**: Adjust the threshold value for better image preprocessing using a slider.
+- **Interactive controls**: Start and stop digit inference with mouse clicks.
+- **Training capability**: Automatically trains the model if no pre-trained model is found.
 
-- **Real-Time Recognition:** Utilizes OpenCV to capture video from a webcam and performs real-time digit recognition.
-- **CNN Model Training:** Trains a CNN model on the MNIST dataset to recognize handwritten digits.
-- **User Interaction:** Allows users to toggle between inference mode and normal video display with a mouse click.
-- **Threshold Adjustment:** Provides a trackbar interface to adjust the threshold for image binarization in real-time.
+## Prerequisites
+- Python 3.7+
+- TensorFlow
+- OpenCV
+- NumPy
 
-## Dependencies
+## Installation
 
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/real-time-digit-recognition.git
+   cd real-time-digit-recognition
+   ```
+
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Ensure you have the MNIST dataset. If not, the script will download it automatically when training.
+
+## Usage
+
+### Run the Application
+To start the real-time digit recognition:
+```bash
+python main.py
+```
+
+### Key Features
+- **Mouse Interaction**:
+  - Click anywhere on the webcam feed to toggle digit inference on or off.
+- **Threshold Adjustment**:
+  - Use the threshold slider to adjust the binary threshold value for preprocessing.
+- **Exit**:
+  - Press the `q` key to exit the application.
+
+### Model Training
+If a pre-trained model (`model_saved.h5`) is not found, the script will:
+1. Download the MNIST dataset.
+2. Train a neural network on the dataset.
+3. Save the trained model for future use.
+
+## Code Overview
+
+### Key Components
+
+#### `train_model(x_train, y_train, x_test, y_test)`
+Trains a neural network on the MNIST dataset and stops training early if accuracy exceeds 99%.
+
+#### `load_mnist_data()`
+Loads the MNIST dataset for training and testing.
+
+#### `predict(model, img)`
+Uses the trained model to predict the digit in a given image.
+
+#### `start_cv(model)`
+Handles live webcam feed, processes frames, and performs digit recognition in real time.
+
+### Constants
+- `MODEL_FILE`: Path to the saved model file.
+- `MNIST_PATH`: Path to the MNIST dataset.
+- `THRESHOLD_DEFAULT`: Default threshold value for image preprocessing.
+- `FRAME_COUNT_RESET`: Number of frames before resetting inference.
+
+## Requirements
+The following Python libraries are required to run this project:
 - TensorFlow
 - NumPy
 - OpenCV
 
-## Usage
+Install them via `pip`:
+```bash
+pip install tensorflow opencv-python-headless numpy
+```
+
+## File Structure
+- `main.py`: Main script for running the application.
+- `requirements.txt`: List of Python dependencies.
+- `model_saved.h5`: Pre-trained model file (if available).
+
+## Notes
+- Ensure your webcam is connected and working correctly before running the script.
+- Adjust the threshold slider for better recognition accuracy depending on lighting conditions and input.
+
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Acknowledgments
+- The MNIST dataset is provided by [Yann LeCun's MNIST Database](http://yann.lecun.com/exdb/mnist/).
+- TensorFlow and OpenCV are used for model training and computer vision tasks.
+
+## Contributing
+Contributions are welcome! Feel free to submit a pull request or open an issue to suggest improvements.
+
+
+
 
 1. Install the required dependencies (`tensorflow`, `numpy`, `opencv-python`).
 2. Run the `real_time_digit_recognition.py` script.
