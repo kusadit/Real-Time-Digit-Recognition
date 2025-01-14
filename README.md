@@ -34,7 +34,7 @@ This project implements a real-time digit recognition system using a pre-trained
 ### Run the Application
 To start the real-time digit recognition:
 ```bash
-python main.py
+python AI.py
 ```
 
 ### Key Features
@@ -85,8 +85,8 @@ pip install tensorflow opencv-python-headless numpy
 ```
 
 ## File Structure
-- `main.py`: Main script for running the application.
-- `requirements.txt`: List of Python dependencies.
+- `AI.py`: Main script for running the application.
+- `README.md`: Documentation file.
 - `model_saved.h5`: Pre-trained model file (if available).
 
 ## Notes
