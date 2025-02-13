@@ -18,7 +18,7 @@ This project implements a real-time digit recognition system using a pre-trained
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/real-time-digit-recognition.git
+   git clone https://github.com/kusadit/real-time-digit-recognition.git
    cd real-time-digit-recognition
    ```
 
